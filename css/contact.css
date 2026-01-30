@@ -1,0 +1,343 @@
+/* ===========================
+   RESET & GLOBAL
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* Stack navbar + content + footer */
+}
+
+body {
+  background: #f9f9f9;
+  color: #111827;
+  line-height: 1.6;
+  opacity: 0; /* page fade-in */
+  transition: opacity 0.5s ease, background 0.3s, color 0.3s;
+  flex: 1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ===========================
+   FONT AWESOME FIX (IMPORTANT)
+=========================== */
+.fa,
+.fas,
+.far,
+.fab,
+.fa-solid,
+.fa-brands {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+  font-weight: 900;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: #111827;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00bcd4;
+}
+
+.logo {
+  color: #00bcd4;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li {
+  margin-left: 25px;
+}
+
+.nav-links a {
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #00bcd4;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #00bcd4;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s;
+}
+
+.nav-links a.active::after,
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.dark-mode-toggle {
+  font-size: 1.6rem;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+/* ===========================
+   SECTION
+=========================== */
+.section {
+  padding: 80px 10%;
+  max-width: 700px;
+  margin: 0 auto;
+  flex: 1; /* Make section take remaining space */
+}
+
+.section h1 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #111827;
+  text-align: center;
+}
+
+/* ===========================
+   CONTACT FORM
+=========================== */
+#contact-form {
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #111827;
+  background: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: #00bcd4;
+  box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.15);
+}
+
+#contact-form textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+#contact-form button {
+  padding: 14px;
+  background: #00bcd4;
+  color: #111827;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#contact-form button:hover {
+  background: #00a0b0;
+  transform: translateY(-2px);
+}
+
+#form-status {
+  text-align: center;
+  font-weight: 500;
+  margin-top: 15px;
+  font-size: 1.1rem;
+}
+
+#form-status.success {
+  color: #10b981;
+}
+
+#form-status.error {
+  color: #ef4444;
+}
+
+/* ===========================
+   FADE-IN ANIMATION
+=========================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 900px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #111827;
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 20px 10%;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .section {
+    padding: 60px 6%;
+  }
+
+  #contact-form {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .section h1 {
+    font-size: 1.9rem;
+  }
+
+  #contact-form button {
+    font-size: 1rem;
+  }
+}
+
+/* ===========================
+   DARK MODE
+=========================== */
+body.dark-mode {
+  background: #111827;
+  color: #f9f9f9;
+}
+
+body.dark-mode .navbar {
+  background: #1f2937;
+}
+
+body.dark-mode .nav-links a {
+  color: #f9f9f9;
+}
+
+body.dark-mode .nav-links a.active,
+body.dark-mode .nav-links a:hover {
+  color: #00bcd4;
+}
+
+body.dark-mode .section h1 {
+  color: #f9f9f9;
+}
+
+body.dark-mode #contact-form {
+  background: #1f2937;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode #contact-form input,
+body.dark-mode #contact-form textarea {
+  background: #374151;
+  color: #f9f9f9;
+  border-color: #4b5563;
+}
+
+body.dark-mode #contact-form input:focus,
+body.dark-mode #contact-form textarea:focus {
+  border-color: #00bcd4;
+  box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.25);
+}
+
+body.dark-mode #contact-form button {
+  background: #00bcd4;
+  color: #111827;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #111827;
+  color: white;
+  transition: background-color 0.4s ease;
+}
+
+body.dark-mode footer {
+  background-color: #1f2937;
+  color: #f9f9f9;
+}
+
+

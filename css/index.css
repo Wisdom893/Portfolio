@@ -1,0 +1,279 @@
+/* ===========================
+   RESET
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===========================
+   GLOBAL
+=========================== */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f9f9f9;
+  color: #111827;
+  line-height: 1.6;
+  opacity: 0;
+  transition: opacity 0.5s ease, background 0.3s, color 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ===========================
+   FONT AWESOME FIX (IMPORTANT)
+=========================== */
+.fa,
+.fas,
+.far,
+.fab,
+.fa-solid,
+.fa-brands {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+  font-weight: 900;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: #111827;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  color: #00bcd4;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 25px;
+}
+
+.nav-links a {
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #00bcd4;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ===========================
+   HERO
+=========================== */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 10%;
+  gap: 40px;
+}
+
+.hero-left h1 {
+  font-size: 2.6rem;
+}
+
+.hero-left h1 span {
+  color: #00bcd4;
+}
+
+.hero-left p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-right: 10px;
+  background: #00bcd4;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn i {
+  margin-right: 6px;
+}
+
+.btn:hover {
+  background: #0097a7;
+  transform: translateY(-2px);
+}
+
+.btn.outline {
+  background: transparent;
+  color: #00bcd4;
+  border: 2px solid #00bcd4;
+}
+
+/* ===========================
+   CONTACT DETAILS
+=========================== */
+.home-contact {
+  margin-top: 25px;
+}
+
+.home-contact p {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.home-contact i {
+  margin-right: 8px;
+  color: #00bcd4;
+}
+
+/* ===========================
+   PROFILE IMAGE
+=========================== */
+.profile-pic {
+  width: 260px;
+  border-radius: 50%;
+  border: 4px solid #00bcd4;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.profile-pic:hover {
+  transform: scale(1.08);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* ===========================
+   FADE IN
+=========================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #111827;
+    position: absolute;
+    top: 70px;
+    left: 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+}
+
+/* ===========================
+   DARK MODE
+=========================== */
+body.dark-mode {
+  background: #111827;
+  color: #f9f9f9;
+}
+
+body.dark-mode .navbar {
+  background: #1f2937;
+}
+
+/* ===========================
+   CONTACT LINKS STYLING
+=========================== */
+.home-contact a {
+  color: #00bcd4; /* bright blue */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.home-contact a:hover {
+  color: #0097a7; /* darker blue on hover */
+  text-decoration: underline;
+}
+
+/* ===========================
+   NAVBAR LOGO IMAGE
+=========================== */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* space between image and text */
+}
+
+.logo-img {
+    width: 40px;      /* adjust size */
+    height: 40px;     /* keep square */
+    border-radius: 50%; /* circular image */
+    object-fit: cover;
+    border: 2px solid #00bcd4; /* optional border */
+}
+
+/*===================
+footer
+====================*/
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #111827;
+  color: white;
+  margin-top: 2rem;
+  transition: background-color 0.4s ease;
+}
+body.dark-mode footer {
+  background-color: #1f2937;
+  color: #f9f9f9;
+}

@@ -1,0 +1,402 @@
+/* ===========================
+   RESET & GLOBAL
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f9f9f9;
+  color: #111827;
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.5s ease, background 0.3s, color 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: #111827;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00bcd4;
+}
+
+.logo {
+  color: #00bcd4;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 25px;
+}
+
+.nav-links a {
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #00bcd4;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #00bcd4;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s ease;
+}
+
+.nav-links a.active::after,
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.dark-mode-toggle {
+  font-size: 1.6rem;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+/* ===========================
+   ABOUT SECTION
+=========================== */
+.section {
+  flex: 1;
+  padding: 80px 10%;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section h1 {
+  font-size: 2.4rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  color: #111827;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.about-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  text-align: center;
+}
+
+.about-photo {
+  flex: 0 0 auto;
+}
+
+.profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #00bcd4;
+  box-shadow: 0 6px 18px rgba(0, 188, 212, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.06);
+}
+
+.about-intro {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-intro h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.lead {
+  font-size: 1.18rem;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+/* Main text content */
+.about-content {
+  font-size: 1.1rem;
+  color: #374151;
+}
+
+.about-content p {
+  margin-bottom: 1.5rem;
+}
+
+.about-content strong {
+  color: #111827;
+}
+
+/* Skills highlights */
+.skills-highlight {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.skills-highlight span {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Values / motivations list */
+.values-list {
+  padding-left: 1.5rem;
+  margin: 1.2rem 0 2rem;
+}
+
+.values-list li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.values-list li::before {
+  content: "✓";
+  color: #00bcd4;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Call to action */
+.call-to-action {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding: 2rem;
+  background: #f0f9ff;
+  border-radius: 12px;
+  border: 1px solid #bae6fd;
+}
+
+.call-to-action p {
+  font-size: 1.15rem;
+  margin-bottom: 1.2rem;
+}
+
+.btn.contact-btn {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background: #00bcd4;
+  color: #111827;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn.contact-btn:hover {
+  background: #009fb3;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 188, 212, 0.3);
+}
+
+/* ===========================
+   FADE IN
+=========================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #111827;
+  color: white;
+  margin-top: auto;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 900px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #111827;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 20px 10%;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .section {
+    padding: 60px 6%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    border-width: 3px;
+  }
+
+  .section h1 {
+    font-size: 2.1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .section h1 {
+    font-size: 1.9rem;
+  }
+
+  .skills-highlight span {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===========================
+   DARK MODE
+=========================== */
+body.dark-mode {
+  background: #111827;
+  color: #f9f9f9;
+}
+
+body.dark-mode .navbar {
+  background: #1f2937;
+}
+
+body.dark-mode .nav-links a {
+  color: #f9f9f9;
+}
+
+body.dark-mode .nav-links a.active,
+body.dark-mode .nav-links a:hover {
+  color: #00bcd4;
+}
+
+body.dark-mode .section h1,
+body.dark-mode .call-to-action p {
+  color: #f9f9f9;
+}
+
+body.dark-mode .about-content,
+body.dark-mode .lead,
+body.dark-mode .values-list li {
+  color: #d1d5db;
+}
+
+body.dark-mode .skills-highlight span {
+  background: #0c4a6e;
+  color: #7dd3fc;
+}
+
+body.dark-mode .call-to-action {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+body.dark-mode .btn.contact-btn {
+  background: #00bcd4;
+  color: #0f172a;
+}
+
+body.dark-mode footer {
+  background-color: #1f2937;
+}

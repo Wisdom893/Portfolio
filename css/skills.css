@@ -1,0 +1,434 @@
+/* RESET & GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: #f9f9f9;
+    color: #111827;
+    line-height: 1.6;
+    opacity: 0;
+    /* fade-in */
+    transition: opacity 0.5s ease, background 0.3s, color 0.3s;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: #111827;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: #00bcd4;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: #00bcd4;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #00bcd4;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+}
+
+.nav-links a.active::after,
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* SKILLS SECTION */
+.section {
+    padding: 80px 10%;
+}
+
+.section h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #111827;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    padding: 15px;
+}
+
+.skill i {
+    display: block;
+    font-size: 3rem;
+    color: #00bcd4;
+    margin-bottom: 10px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.skill p {
+    font-weight: 500;
+    color: #111827;
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.skill:hover i {
+    transform: scale(1.2);
+    color: #ff9800;
+}
+
+/* FADE-IN ANIMATION */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #111827;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .skills-grid {
+        gap: 20px;
+    }
+}
+
+/* DARK MODE */
+body.dark-mode {
+    background: #111827;
+    color: #f9f9f9;
+}
+
+body.dark-mode .navbar {
+    background: #1f2937;
+}
+
+body.dark-mode .nav-links a {
+    color: #f9f9f9;
+}
+
+body.dark-mode .nav-links a.active,
+body.dark-mode .nav-links a:hover {
+    color: #00bcd4;
+}
+
+body.dark-mode .skill {
+    background: #1f2937;
+}
+
+body.dark-mode .skill p {
+    color: #f9f9f9;
+}
+
+body.dark-mode .skill i {
+    color: #00bcd4;
+}
+
+body.dark-mode .skill:hover i {
+    color: #ff9800;
+}
+
+/* ===========================
+   NAVBAR LOGO IMAGE
+=========================== */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* space between image and text */
+}
+
+.logo-img {
+    width: 40px;      /* adjust size */
+    height: 40px;     /* keep square */
+    border-radius: 50%; /* circular image */
+    object-fit: cover;
+    border: 2px solid #00bcd4; /* optional border */
+}
+
+/*===================
+footer
+====================*/
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #111827;
+  color: white;
+  margin-top: 2rem;
+  transition: background-color 0.4s ease;
+}
+body.dark-mode footer {
+  background-color: #1f2937;
+  color: #f9f9f9;
+}
+
+/* ===========================================================================================================================
+   RESET & GLOBAL
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%; /* Full height for body */
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f9f9f9;
+  color: #111827;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column; /* Stack navbar, content, footer */
+  min-height: 100vh;      /* Ensure body at least full viewport height */
+  opacity: 0;
+  transition: opacity 0.5s ease, background 0.3s, color 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: #111827;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00bcd4;
+}
+
+.logo {
+  color: #00bcd4;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 25px;
+}
+
+.nav-links a {
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #00bcd4;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ===========================
+   MAIN SECTION
+=========================== */
+main, .section {
+  flex: 1; /* Let content grow and push footer down */
+  padding: 80px 10%;
+}
+
+.section h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.section p {
+  margin-bottom: 15px;
+}
+
+/* ===========================
+   FADE IN
+=========================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 900px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #111827;
+    position: absolute;
+    top: 70px;
+    left: 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+}
+
+/* ===========================
+   DARK MODE
+=========================== */
+body.dark-mode {
+  background: #111827;
+  color: #f9f9f9;
+}
+
+body.dark-mode .navbar {
+  background: #1f2937;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #111827;
+  color: white;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Dark mode footer */
+body.dark-mode footer {
+  background-color: #1f2937;
+  color: #f9f9f9;
+}

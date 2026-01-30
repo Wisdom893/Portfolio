@@ -1,0 +1,1 @@
+- [x] Edit css/contact.css to change .contact-form selectors to #contact-form selectors to match the id in contact.html

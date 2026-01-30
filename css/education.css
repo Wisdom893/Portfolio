@@ -1,0 +1,349 @@
+/* ===========================
+   RESET & GLOBAL
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f9f9f9;
+  color: #111827;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.5s ease, background 0.3s, color 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: #111827;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00bcd4;
+}
+
+.logo {
+  color: #00bcd4;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 25px;
+}
+
+.nav-links a {
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #00bcd4;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #00bcd4;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s ease;
+}
+
+.nav-links a.active::after,
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.dark-mode-toggle {
+  font-size: 1.6rem;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+/* ===========================
+   MAIN SECTION / EDUCATION
+=========================== */
+.section {
+  flex: 1;
+  padding: 80px 10%;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section h1 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #111827;
+}
+
+.level-heading {
+  font-size: 1.8rem;
+  color: #00bcd4;
+  margin: 50px 0 25px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.education-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  font-size: 1.35rem;
+  color: #00bcd4;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin: 6px 0;
+  color: #4b5563;
+}
+
+.card span {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Tertiary block - contains both diploma card + references card */
+.tertiary-block {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Optional: visual distinction for tertiary main card */
+.tertiary-card {
+  border-left: 4px solid #00bcd4;
+  background: #fdfefe; /* very subtle tint – optional */
+}
+
+/* References card (nested inside tertiary block) */
+.references-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.references-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.references-card h3 {
+  font-size: 1.35rem;
+  color: #00bcd4;
+  margin-bottom: 12px;
+}
+
+.reference-list {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reference-item h4 {
+  color: #00bcd4;
+  margin-bottom: 6px;
+}
+
+.reference-item p {
+  margin: 4px 0;
+  color: #4b5563;
+}
+
+/* ===========================
+   FADE IN ANIMATION
+=========================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #111827;
+  color: white;
+  margin-top: auto;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 900px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #111827;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 20px 10%;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .section {
+    padding: 60px 6%;
+  }
+}
+
+@media (max-width: 600px) {
+  .section h1 {
+    font-size: 1.9rem;
+  }
+
+  .level-heading {
+    font-size: 1.6rem;
+  }
+}
+
+/* ===========================
+   DARK MODE
+=========================== */
+body.dark-mode {
+  background: #111827;
+  color: #f9f9f9;
+}
+
+body.dark-mode .navbar {
+  background: #1f2937;
+}
+
+body.dark-mode .nav-links a {
+  color: #f9f9f9;
+}
+
+body.dark-mode .nav-links a.active,
+body.dark-mode .nav-links a:hover {
+  color: #00bcd4;
+}
+
+body.dark-mode .section h1,
+body.dark-mode .level-heading,
+body.dark-mode .references-card h3,
+body.dark-mode .card h3,
+body.dark-mode .reference-item h4 {
+  color: #f9f9f9;
+}
+
+body.dark-mode .card,
+body.dark-mode .references-card {
+  background: #1f2937;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .tertiary-card {
+  background: #1e2a38;
+  border-left-color: #00bcd4;
+}
+
+body.dark-mode .card p,
+body.dark-mode .card span,
+body.dark-mode .reference-item p {
+  color: #d1d5db;
+}
+
+body.dark-mode footer {
+  background-color: #1f2937;
+  color: #f9f9f9;
+}
